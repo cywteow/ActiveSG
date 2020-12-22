@@ -2,7 +2,7 @@
 
 I must admit this code is pretty messy but still workable.
 
-I rushed this out in 1 day.
+I rushed this out in 1 day to explore, learn and fit my needs.
 
 I find that puppeteer is pretty powerful and I think it's possible to inject script/code into the headless chrome's browser context
 

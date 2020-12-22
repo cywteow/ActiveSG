@@ -32,11 +32,37 @@ async function createBrowser(cb) {
   cb()
 }
 
+function convertDaytoString(date){
+  let day = date.getDay()
+  if(day === 0){
+    return 'Sunday'
+  }
+  else if (day === 1){
+    return 'Monday'
+  }
+  else if (day === 2){
+    return 'Tuesday'
+  }
+  else if (day === 3){
+    return 'Wednesday'
+  }
+  else if (day === 4){
+    return 'Thursday'
+  }
+  else if (day === 5){
+    return 'Friday'
+  }
+  else if (day === 6){
+    return 'Saturday'
+  }
+}
+
 function formatDate(date) {
   var d = new Date(date),
       month = '' + (d.getMonth() + 1),
       day = '' + d.getDate(),
       year = d.getFullYear();
+
 
   if (month.length < 2) 
       month = '0' + month;
@@ -141,7 +167,7 @@ async function scrapSource(){
     let telegramFlag = false
 
     let msg = ''
-    msg += formatDate(searchDate) +'\n\n'
+    msg += formatDate(searchDate)+` (${convertDaytoString(searchDate)})` +'\n\n'
 
     for(let i=0;i<VENUE_IDS.length;i++){
       let venue = VENUE_IDS[i]

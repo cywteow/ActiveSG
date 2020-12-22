@@ -1,0 +1,47 @@
+{
+  "name": "WebScrapper",
+  "description": "",
+  "repository": "",
+  "logo": "",
+  "keywords": ["node", "puppeteer", "static", "cron"],
+  "stack": "heroku-16",
+  "buildpacks": [
+    {
+      "url": "https://github.com/jontewks/puppeteer-heroku-buildpack"
+    },
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
+  "formation": {
+    "worker": {
+      "quantity": 1
+    },
+    "web": {
+      "quantity": 0
+    }
+  },
+  "env": {
+    "BOT_TOKEN": {
+      "description": "Telegram Bot Token. Take note there is a colon in between Telegram token."
+    },
+    "BOT_CHATID": {
+      "description": "Telegram Chat to receive alerts, separated by comma and whitespace"
+    },
+    "VENUE_IDS":{
+      "description": "Venues, separated by comma and whitespace",
+      "value": "301, 316, 308, 292, 293, 295, 296, 298, 302, 542, 311, 312, 314"
+    },
+    "SLEEP_TIME": {
+      "description": "Refreshes every 5 minute. Change 5 to adjust the duration of poll. It MUST be in this format. Please poll responsibly as we do not want to flood Carousell servers!",
+      "value": "*/1 * * * *"
+    },
+    "USER_NAME": {
+      "description": "Your username"
+    },
+    "PASSWORD": {
+      "description": "password"
+    }
+
+  }
+}

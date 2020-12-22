@@ -1,0 +1,19 @@
+{
+  "name": "WebScrapper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webScrapper.js",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "cron": "^1.8.2",
+    "dotenv": "^8.2.0",
+    "jsdom": "^16.4.0",
+    "puppeteer": "^5.5.0"
+  },
+  "scripts": {
+    "start": "node webScrapper.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

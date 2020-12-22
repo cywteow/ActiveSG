@@ -213,9 +213,11 @@ async function scrapSource(){
       
 
     }
-    await page.close();
 
     if(telegramFlag){
+      if(previousMsg === ''){
+        telegram_bot_sendtext([`Rebuild detected!\nResetting notification cache...`])
+      }
       if(previousMsg !== msg){
         previousMsg = msg
         telegram_bot_sendtext([msg])
@@ -227,6 +229,8 @@ async function scrapSource(){
   }
   catch(err){
     console.log('Something went wrong with scrapping',err)
+  }
+  finally{
     await page.close();
   }
 
@@ -328,6 +332,8 @@ async function login(){
   }
   catch(err){
     console.log('Error with login, closing page')
+  }
+  finally{
     await page.close();
   }
     

@@ -1,4 +1,4 @@
-# ActiveSGBadminton
+# Badminton TelegramBot
 
 I must admit this code is pretty messy but still workable.
 
